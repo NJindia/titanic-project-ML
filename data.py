@@ -9,7 +9,7 @@ for location in pd.unique(data_df['Embarked'])[:-1]:
     col_name = 'Embarked_' + str(location)
     data_df[col_name] = data_df.apply(lambda row: 1 if row['Embarked'] == location else 0, axis=1)
 data_df = data_df.drop(columns=['Sex', 'Embarked'])
-num_cols = ['Age', 'Fare', 'SibSp', 'Parch', 'Pclass']
+num_cols = ['Age', 'SibSp', 'Parch', 'Pclass']
 for col in num_cols:
     data_df[col] = data_df[col].fillna(data_df[col].mean())
 
